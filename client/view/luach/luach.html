@@ -1,0 +1,193 @@
+<div class="grayOr">
+
+    <div class="order-main">
+        <div class="banner">
+            <img src="public/images/luach.banner-01.png" alt="title">
+
+        </div>
+        <div class="order-con" ng-hide="payment">
+
+            <h2>
+                <label class="Spoiler-Bold" for="">תוכן מודעת מילים בלוח </label>
+            </h2>
+            <h4 class="Spoiler-Bold">
+                לפרסום ב'לעניין' - עד 12 מילים
+                <br> לפרסום ב'שבוע טוב', 'אמצע השבוע', או 'מידע לכל - עד 10 מילים,
+                <br> כל מילה נוספת - בתוספת תשלום - כפי שמפורט במחירון.
+                <br> _____________________________________________________
+
+            </h4>
+            <br>
+            <h3 class="Spoiler-Bold red-font height-70">
+                מלאו בתיבה זאת את המידע שאתם רוצים שיופיע בפרסום:
+                <p class="Spoiler-Bold black-font font-s-18 height-70">
+                    שימו לב! יש למלא בתיבה זו גם טלפון וכו' שאתם רוצים שיופיע במודעה,
+                    <br> פרטי המפרסם בהמשך, הם עבור המערכת בלבד, ולא יפורסמו במודעה.
+                </p>
+            </h3>
+
+            <textarea class="form-control marg-top" ng-model="luach.content" placeholder="תוכן מודעת לוח" vlaue="{{luach.content}}" required></textarea>
+            <h4>
+                <label class="Spoiler-Bold marg-top" for="">הערות</label>
+            </h4>
+            <textarea class="form-control" ng-model="luach.remarks" vlaue="{{luach.remarks}}" placeholder="הערות"></textarea>
+
+        </div>
+
+        <div class="order-det" ng-hide="payment">
+
+
+            <div class="form-group p-type">
+
+                <a href="#/luachPrices" class="Spoiler-Bold red text-left">
+                    <h4 class="Spoiler-Bold font-s-20 red-font">
+                        <a href="./public/images/luach.pdf">לצפיה במחירון לוח - הקש כאן</a>
+                    </h4>
+
+                </a>
+                <hr class="hr">
+
+                <h4 class="Spoiler-Bold">לפרסום בעיתון הקרוב:</h4>
+                <h5 class="Spoiler-Regular">סמן את העיתון/נים הרצויים:</h5>
+
+                <!-- checkbox area -->
+                <div class="marg-top">
+                    <div ng-repeat="chek in chek">
+                        <div ng-include="'public/view/order/checkboxTemp.html'"></div>
+                    </div>
+                </div>
+
+
+
+                <!-- type area -->
+                <div class="checkbox-area">
+                    <div class="choose-p">
+                        <h4 class="Spoiler-Bold">בחר סוג מודעה:</h4>
+                        <select class="form-control" name="selectPlace" ng-model="luach.type" ng-change="selectedType()">
+                            <option class="Spoiler-black-title font-s-16" value="">-בחר סגנון מודעת לוח-</option>
+                            <option class="shlager-black font-s-16" ng-repeat="type in type" value="{{type}}">{{type}}</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <!-- section area -->
+                <div class="checkbox-area" ng-show="luach.type">
+                    <hr class="hr">
+
+                    <div class="choose-p">
+                        <h4 class="Spoiler-Bold">בחר מדור:</h4>
+                        <h5 class="Spoiler-Regular">בחר תחת איזו כותרת ברצונך שהמודעה תופיע:</h5>
+                        <select class="form-control" name="selectSection" ng-model="luach.section">
+                            <option class="Spoiler-black-title font-s-16" value="">-בחר מדור למודעה-</option>
+                            <option class="shlager-black font-s-16" ng-repeat="section in section" value="{{section}}">{{section}}</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="user-det" ng-hide="payment">
+            <hr class="hr">
+            <h2 class="Spoiler-Bold">פרטי המפרסם:</h2>
+            <form class="form-horizontal">
+                <div>
+                    <label for="" class="Spoiler-Regular font-s-18">נא למלא את פרטי המפרסם בכל השדות:</label>
+                    <br>
+                    <input type="text" class="form-control width-25 float-right" ng-model="luach.fname" maxlength="32" pattern="[A-Zא-תa-z ]{1,32}"
+                        vlaue="{{luach.fname}}" placeholder="שם פרטי" required>
+                    <input type=" text " class="form-control width-25 float-right" ng-model="luach.lname " maxlength="32" pattern="[A-Zא-תa-z ]{1,32} "
+                        placeholder="שם משפחה " vlaue="{{luach.lname}}" required>
+                    <input type="number" class="form-control width-25 float-right" ng-model="luach.phone" placeholder="טלפון" vlaue="{{luach.phone}}"
+                        required>
+                    <input type=" email " class="form-control width-25 float-right" ng-model="luach.email" placeholder="אימייל" vlaue="{{luach.email}}"
+                        required>
+                    <br/>
+                    <button type="submit" class="btn-lg btn btn-danger padd-top-10 float-left marg-top Spoiler-Bold white-font" ng-click="orderSummary(chek)">סיכום הזמנה</button>
+
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- level 2 - payment -->
+
+    <div class="payment-main marg-bottom">
+
+        <div class="pay-details spoiler-regular" ng-show="payment">
+            <div>
+                <h4>
+                    <b class="red-font">סיכום הזמנה:</b>
+                    <br>
+                    <b>מדור:</b> {{luach.section}}
+                    <br>
+                    <b>סגנון:</b> {{luach.type}}
+                    <br>
+                    <b>מופעים:</b>
+                    <span class="line-height-150" ng-bind-html="luach.heShows | nl2p"></span>
+                    <b>תוכן המודעה:</b> {{luach.content}}
+                    <br>
+                    <b>הערות:</b> {{luach.remarks}}
+                    <br>
+                    <hr>
+                    <b class="red-font">פרטי המפרסם:</b>
+                    </br>
+                </h4>
+
+                <span class="font-s-18">
+                    שימו לב! פרטי המפרסם לא יפורסמו במודעה, הם מיועדים למערכת בלבד. כל התוכן והפרטים (כולל טלפונים) שאתם רוצים שיופיעו במודעה
+                    חייבים להופיע בתוכן המודעה
+                </span>
+                <h4>
+                    <br>
+                    <b>שם פרטי:</b> {{luach.fname}}
+                    <br>
+                    <b>שם משפחה:</b> {{luach.lname}}
+                    <br>
+                    <b>טלפון:</b> {{luach.phone}}
+                    <br>
+                    <b>מייל:</b> {{luach.email}}
+                    <hr>
+                    <b class="red-font">סיכום מחיר:</b>
+                    <br> מספר מילים: {{price.wordCount}}.
+                    <br> תוספת עבור הדגשה: {{price.extra}} ש"ח.
+                    <br> הנחה עבור חבילה: {{price.discount}} ש"ח.
+                    <br>
+                    <b>סיכום: {{price.total}} ש"ח.</b>
+
+                    <div class="Spoiler-Bold red text-left">
+                        <h4>
+                            <a href="./public/images/luach.pdf">לצפיה במחירון לוח - הקש כאן</a>
+                        </h4>
+                    </div>
+
+                </h4>
+                <button class=" btn-lg btn-danger padd-top-10 float-left marg-top Spoiler-Bold white-font marg-bottom" ng-click="backToLuach()">לחזרה למסך קודם לשינוי/תיקון פרטים</button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="pay-credit" ng-show="payment">
+            <!-- credit card  - payment -->
+            <div class="crdit-aria">
+                <h2 class="Spoiler-Bold">פרטי תשלום:</h2>
+                <div ng-include="'./public/view/payment/orderFormTemplate.html'"></div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="white padding-main" ng-controller="papers">
+    <div>
+        <div class="fullscreen text-center shlager-back">
+            <h3 class="Spoiler-black-title font-s-35">עיתונים אחרונים</h3>
+        </div>
+    </div>
+
+    <div>
+
+        <!-- last lainyan -->
+        <div class="paper-flx-container">
+            <div class="paper-flex-item gray" ng-repeat="data in data">
+                <div ng-include="'public/view/papers/papersTemp.html'"></div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

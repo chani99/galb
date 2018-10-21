@@ -1,0 +1,14 @@
+<div class="checkbox-area">
+    <div class="choose-p">
+        <label class="Spoiler-Bold font-s-16">
+        <input class="big-checkbox clss-input" type="checkbox" value="{{chek.name}}" ng-model="chek.selected" ng-change="addNum(chek.shows, $index)" >
+        {{chek.nameH}} 
+    </label>
+        <div class="float-left">
+            <span class="Spoiler-Regular font-s-16">מספר מופעים:</span>
+            <input class="big-num clss-input" type="number" name="{{chek.name}}" ng-model="chek.shows" value="">
+        </div>
+        <hr class="hr">
+    </div>
+</div>
+

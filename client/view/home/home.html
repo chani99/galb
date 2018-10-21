@@ -1,0 +1,75 @@
+<div ng-controller="home">
+    <div>
+        <div class="flex-container" id="photo">
+            <div class="fullscreen">
+                <img src="public/images/GB-plan-2.jpg" alt="GB-backgrand" class="img-responsive">
+            </div>
+        </div>
+    </div>
+
+    <!-- logos aria -->
+    <div>
+        <div id="logos" class="flex-container">
+
+            <div class="flex-item hover-red" ng-click="choosePaper('lainyan')">
+                <a href="#" class="over"><img class="over" src="public/images/lainyan_logo.png" alt="לעניין" class="Plogos center-block" style="max-height: 65px"></a>
+                <p class="over-logo">יום ראשון</br>ירושלים<br>
+            </div>
+
+            <div class="flex-item hover-red" ng-click="choosePaper('meida')">
+                <a href="#" class="over"><img class="over" src="public/images/meida_logo.png" alt="מידע לכל" class="Plogos center-block" style="max-height: 50px"></a>
+                <p class="over-logo">יום שני</br>בית שמש</p>
+            </div>
+
+            <div class="flex-item hover-red" ng-click="choosePaper('shavua')">
+                <a class="over" href="#"><img class="over" src="public/images/shavua_logo.png" alt="שבוע טוב" class="Plogos center-block" style="max-height: 65px"></a>
+                <p class="over-logo">מוצאי שבת</br>ביתר עילית</p>
+            </div>
+
+            <div class="flex-item hover-red" ng-click="choosePaper('emtza')">
+                <a href="#" class="over"><img class="over" src="public/images/emtza_logo.png" alt="אמצע השבוע" class="Plogos center-block" style="max-height: 50px"></a>
+                <p class="over-logo">יום שלישי</br>ביתר עילית</p>
+            </div>
+
+            <div class="flex-item hover-red" ng-click="choosePaper('bb')">
+                <a href="#" class="over"><img class="over" src="public/images/bb.png" alt="לעניין בני ברק" class="Plogos center-block" style="max-height: 65px"></a>
+                <p class="over-logo">מוצאי שבת</br>בני ברק</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- last papers aria -->
+    <div class="flex-container">
+        <div class="fullscreen gray text-center shlager-black">
+            <h3>עיתונים אחרונים</h3>
+        </div>
+    </div>
+
+    <div>
+        <div class="flex-container">
+            <div class="flex-item gray h-350 text-center">
+                <a href="#/book?k=lainyan&n={{lastLaintan}}&p={{lastLainyanPages}}"><img src="public/papers/lainyan/{{lastLaintan}}/1.jpg" alt="לעניין" class="shlager-black paper_size"></a>
+            </div>
+
+            <div class="flex-item gray h-350 text-center">
+                <a href="#/book?k=meida&n={{lastMaida}}&p={{lastMeidaPages}}"><img src="public/papers/meida/{{lastMaida}}/1.jpg" alt="מידע לכל" class="shlager-black paper_size"></a>
+            </div>
+
+            <div class="flex-item gray h-350 text-center">
+                <a href="#/book?k=shavua&n={{lastSt}}&p={{lastSTPages}}"><img src="public/papers/shavua/{{lastSt}}/1.jpg" alt="אמצע השבוע" class="shlager-black paper_size"></a>
+            </div>
+
+            <div class="flex-item gray h-350 text-center">
+                <a href="#/book?k=emtza&n={{lastEmtza}}&p={{lastEmtzaPages}}"><img src="public/papers/emtza/{{lastEmtza}}/1.jpg" alt="שבוע טוב" class="shlager-black paper_size"></a>
+            </div>
+
+            <div class="flex-item gray h-350 text-center">
+                <a href="#/book?k=lainyanBB&n={{lastBB}}&p={{lastBBPages}}"><img src="public/papers/lainyanBB/{{lastBB}}/1.jpg" alt="לעניין בני ברק" class="shlager-black paper_size"></a>
+            </div>
+
+        </div>
+    </div>
+
+</div>

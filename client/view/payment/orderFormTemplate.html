@@ -1,0 +1,46 @@
+<form name="ccForm ">
+    <div class="form-group Spoiler-Regular float-right">
+        <label for="card-number">מספר כרטיס</label>
+        <div class="inline-block">
+            <input type="text" class="form-control width-65 " id="cardNumber" cc-number cc-eager-type name="ccNumber" ng-model="card.number">
+            <h2 ng-show="ccForm.ccNumber.$valid" class="grenn-font inline">&#9989 </h2>
+        </div>
+    </div>
+    </br>
+    <span class="inline-block">סוג כרטיס: {{ccForm.ccNumber.$ccType || 'לא ידוע'}} </span>
+    <hr>
+
+    <div class="form-group">
+        <label for="cvc">CVC</label>
+        </br>
+        <input type="text" class="form-control width-25" id="cvc" cc-cvc cc-type="ccForm.ccNumber.$ccType" name="ccCvc" ng-model="card.cvc">
+        <h2 ng-show="ccForm.ccCvc.$valid" class="grenn-font inline">&#9989 </h2>
+    </div>
+    <!-- <span>חוקי: {{ccForm.ccCvc.$valid | yesNo}}</span> -->
+    <hr>
+
+    <div class="form-group">
+        <label for="card-number">תאריך תפוגה:</label>
+        </br>
+        <div cc-exp>
+            <div>
+
+                <input placeholder="YY" type="text" class="form-control width-25 " cc-exp-year name="ccExpYear" ng-model="card.expiration.year">
+                <input placeholder="MM" type="text" class="form-control width-25" cc-exp-month name="ccExpMonth" ng-model="card.expiration.month">
+                <h2 ng-show="!ccForm.$error.ccExp" class="grenn-font inline">&#9989 </h2>
+
+            </div>
+        </div>
+    </div>
+    </br>
+    <div class="bg-danger" ng-show="formValidate.credit"> נא להזין כרטיס אשראי חוקי </div>
+    </br>
+
+    <hr>
+
+    <button class="btn-lg btn btn-danger padd-top-10 float-left marg-top marg-bottom Spoiler-Bold white-font" ng-click="orderButton()"
+        ng-disabled="!ccForm.ccCvc.$valid||!ccForm.ccNumber.$valid||ccForm.$error.ccExp">הזמן</button>
+    <br>
+
+</form>
+<!-- order button -->

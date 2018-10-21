@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'Spoiler-Regular';
+  src: url('../../fonts/Spoiler-Regular.woff') format('woff'), url('../fonts/Spoiler-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Spoiler-Bold';
+  src: url('../../fonts/Spoiler-Bold.woff') format('woff'), url('../fonts/Spoiler-Bold.ttf') format('truetype');
+}
+.white-font {
+  color: white;
+}
+.red-font {
+  color: #ec1f27;
+}
+.black-font {
+  color: black;
+}
+.arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.shlager-black {
+  padding-top: 10px;
+  font-family: 'Spoiler-Regular';
+  color: black;
+  font-size: 18px;
+  text-align: center;
+}
+.Spoiler-Bold {
+  font-family: 'Spoiler-Bold';
+}
+.Spoiler-Regular {
+  font-family: 'Spoiler-Regular';
+  color: black;
+}
+.shlager-white {
+  font-family: 'Spoiler-Regular';
+  color: white;
+  font-size: 14px;
+  text-align: right;
+}
+#Spoiler-Regular {
+  font-family: 'Spoiler-Regular';
+  color: black;
+}
+.spoiler-regular {
+  font-family: 'Spoiler-Regular';
+  color: black;
+}
+.shlager-black-left {
+  font-family: 'Spoiler-Bold';
+  color: black;
+  text-align: left;
+  line-height: 110%;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+.Spoiler-black-title {
+  font-family: 'Spoiler-Bold';
+  color: black;
+  text-align: center;
+}
+.font-s-20 {
+  font-size: 20px;
+}
+.font-s-15 {
+  font-size: 15px;
+}
+.font-s-25 {
+  font-size: 25px;
+}
+.font-s-30 {
+  font-size: 30px;
+}
+.font-s-35 {
+  font-size: 35px;
+}
+.font-s-55 {
+  font-size: 55px;
+}
+.font-s-20 {
+  font-size: 20px;
+}
+.font-s-18 {
+  font-size: 18px;
+}
+.font-s-14 {
+  font-size: 14px;
+}
+.font-s-16 {
+  font-size: 16px;
+}
+.red {
+  color: #ec1f27;
+}
+.line-height-70 {
+  line-height: 70%;
+}
+.line-height-50 {
+  line-height: 50%;
+}
+.line-height-150 {
+  line-height: 150%;
+}

@@ -1,0 +1,58 @@
+<div ng-controller="contactform">
+<div id="contact" class="contact-main Spoiler-Reguler-right">
+    <div class="contact">
+        <h2>צרו קשר</h2>
+        <form class="form-horizontal" name="contactForm" ng-class="{'submitted': submitted}" ng-submit="contactSubmit()">
+            <div>
+                <label for="">שם פרטי ומשפחה</label><br>
+                <input type="text" name="fName" class="form-control width-50" name="uName" ng-model="contact.fname" placeholder="שם פרטי" required>
+                <input type="text" name="lName" class="form-control width-50"  ng-model="contact.lname" placeholder="שם משפחה" required>
+                <br />
+                  
+            </div>
+            <hr>
+            <div>
+                <label for="">טלפון ליצירת קשר</label>
+                <input type="number" name="phone" class="form-control" ng-model="contact.phone" placeholder="טלפון" required>
+            </div>
+            <hr>
+            <div>
+                <label for="">Email</label>
+                <input type="email" name="email" class="form-control" ng-model="contact.email" placeholder="email@gmail.com" required>
+            
+            </div>
+            <hr>
+            <div>
+                <label for="">ההודעה שלך</label>
+                <textarea class="form-control" name="content" ng-model="contact.content" placeholder="תוכן ההודעה" required></textarea>
+            </div>
+            <hr>
+            <button type="submit" class="btn-lg btn btn-danger" ng-click="submitted= true;"  >שלח הודעה</button>
+        </form>
+
+    </div>
+ 
+
+    <div class="adress Spoiler-Regular" >
+        <br>
+        <img id="header" src="public/images/GB-logo-black.png" alt="title" style="width:120px">
+        <br>
+        <h3 class="Spoiler-Bold marg-top">משרדי גל ביתר:</h3>
+        <h4 class="Spoiler-Regular">
+            רח' בן זכאי 11/6<br>
+            ביתר עילית<br>
+            <div class="Spoiler-Bold font-s-20 marg-top">טל ראשי:</div>
+            02-5806642<br>
+            <div class="Spoiler-Bold font-s-20 marg-top">פקס:</div>
+            0722-740033<br>
+            <div class="Spoiler-Bold font-s-20 marg-top">אימייל:</div>
+            <div class="arial font-s-15"> gb@5806642.com </div>
+            <h5 class="marg-top">
+            ישיר 'לעניין': 0000000000 <br>
+            ישיר 'מידע לכל': 0000000000 <br>
+            </h5>
+        </h4>
+    </div>
+</div>
+</div>
+

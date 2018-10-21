@@ -1,0 +1,249 @@
+@gb-lightGray: rgb(196, 196, 196);
+
+.order-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "banner banner banner banner banner"
+    "order-con order-con  order-con order-det order-det"
+    "user-det user-det user-det user-det user-det";
+    
+    }
+.grayOr{
+    background: @gb-lightGray;
+}
+.banner{
+    grid-area: banner;
+    height: auto;
+width: 100%;
+img{
+    width: 100%;
+}
+}
+
+.order-con{
+    grid-area: order-con;
+    padding-top: 15px;
+    padding-right: 8%;
+    padding-left: 4%;
+    background-color: @gb-lightGray;
+    height: auto;
+    }
+
+.order-det{
+    display: grid;
+        grid-area: order-det;
+        padding-top: 22px;
+        padding-right: 8%;
+        padding-left: 13%;
+        background-color: @gb-lightGray;
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "p-type p-type "
+        "add-size add-place"
+        "attach-img attach-img";
+    
+    }
+
+    .p-type{
+        grid-area: p-type;
+        height: auto;
+        
+    }
+
+    .hr{
+        height: 1px;
+        background: white;
+        border-top: solid 1px white;
+        margin-top: 8px;
+        margin-bottom: 8px;
+
+    }
+
+
+
+.checkbox-area{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+
+}
+    .choose-p{
+    width: 100%;
+    box-sizing: border-box;
+    }
+
+    .p-times{
+        grid-area: p-times;
+        height: auto;
+    }
+    .add-size{
+        grid-area: add-size;
+        padding-top: 15px;
+        padding-right: 2%;
+        padding-left: 2%;
+        height: auto;
+
+    }
+
+label{
+    margin-bottom: 0;
+    font-weight: 10;
+
+}
+.user-det{
+    h2{
+    margin-bottom: -8px;
+    }
+}
+
+    .add-place{
+        grid-area: add-place;
+        padding-top: 15px;
+        padding-right: 2%;
+        padding-left: 2%;
+        height: auto;
+    }
+    .user-det{
+        grid-area: user-det;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom: 2%;
+        background-color: @gb-lightGray;
+        height: auto;
+    }    
+    .attach-img{
+        grid-area: attach-img;
+        padding: 5%;
+        height: auto;
+    }
+    textarea.form-control {
+        height:17%;
+      }
+      
+      textarea.marg-top {
+        height:42%;
+      }
+
+          
+      #luachInput {
+        height:40%;
+      }
+
+      input[type=file]{
+          margin-top: 5px;
+          width: 100%;
+          background-color: white;
+          padding: 5px;
+          border-radius: 0px;
+      }
+
+.big-checkbox {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    padding-right: 20px;
+    vertical-align: bottom;
+    position: relative;
+
+}
+.form-control {
+    display: inline-flex;
+    border-radius: 0;
+    margin: 0;
+    border: 0;
+    height: 45px;
+  }
+  
+.big-num {
+    width: 55px;
+    height: 25px;
+    background-color: #D2CFCF;
+    padding-right: 20px;
+    vertical-align: center;
+    position: relative;
+}
+
+    .float-left{
+        float:left;
+        padding-top: 2px;
+    }
+    .right-line{
+    border-right: 2px solid white;
+    }
+
+ .clss-label {
+  padding-left: 15px;
+  padding-left:4em;
+}
+
+
+
+.width-25{
+    width: 25%;
+}
+
+
+.width-65{
+    width: 65%;
+}
+
+.padd-5{
+padding: 5%;
+}
+
+@media screen and (max-width: 800px) {
+    .order-main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "banner"
+        "order-con"
+        "order-det"
+        "user-det";
+        
+        }
+.order-det, .order-con, .user-det{
+    padding: 6%;
+
+}
+    .width-25{
+        width: 100%;
+    }
+
+}
+
+.padd-top-10{
+    padding-top: 10px;
+}
+
+#processing {  
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:white;
+    background-size:cover;
+    opacity: .6;
+}
+.ajax-loader {
+    position: absolute;
+    top: 40%;
+    left:50%;
+    margin: auto 0;
+    display: block;     
+}
+.moveUp{
+    position: relative;
+    top: -25px;
+
+}
+
+.moveUp15{
+    position: relative;
+    top: -15px;
+
+}

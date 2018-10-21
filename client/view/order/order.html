@@ -1,0 +1,134 @@
+<div class="padd-5 grayOr">
+    <div id="processing" ng-hide="spinner">
+        <img class="ajax-loader" src="./public/images/lspinner.gif" />
+    </div>
+
+    <div class="order-main">
+        <div class="order-con">
+
+            <h2>
+                <label class="Spoiler-Bold" for="">תוכן הפרסום</label>
+            </h2>
+            <h5 class="Spoiler-Regular">מלאו בתיבה זאת את המידע שאתם רוצים שיופיע בפרסום:</h5>
+
+            <textarea class="form-control marg-top" ng-model="order.addContent" placeholder="תוכן הפרסום" vlaue="{{order.addContent}}"
+                required></textarea>
+            </br>
+            <div ng-show="validate.addContent" class="red-font">שדה חובה, יש להזין רק תווים חוקיים</div>
+            <h4>
+                <label class="Spoiler-Bold marg-top" for="">הערות</label>
+            </h4>
+            <textarea class="form-control" ng-model="order.remarks" vlaue="{{order.remarks}}" placeholder="הערות"></textarea>
+            </br>
+            <div ng-show="validate.remarks" class="red-font">יש להזין רק תווים חוקיים</div>
+
+        </div>
+
+        <div class="order-det">
+            <div class="form-group p-type">
+                <h4 class="Spoiler-Bold">לפרסום בעיתון הקרוב:</h4>
+                <h5 class="Spoiler-Regular">סמן את העיתון/נים הרצויים:</h5>
+
+                <!-- checkbox area -->
+                <div class="marg-top">
+                    <div ng-repeat="chek in chek">
+                        <div ng-include="'public/view/order/checkboxTemp.html'"></div>
+                    </div>
+                    </br>
+                    <div ng-show="validate.shows" class="red-font moveUp">חובה לבחור מופע</div>
+
+                </div>
+
+                <!-- size area -->
+                <div class="checkbox-area">
+                    <div class="choose-p">
+                        <h4 class="Spoiler-Bold">בחר גודל מודעה:</h4>
+                        <select class="form-control" name="selectsize" id="selectsize" ng-model="order.size">
+                            <option class="Spoiler-black-title font-s-14" value="">-בחר גודל-</option>
+                            <option class="shlager-black font-s-14" ng-repeat="size in size" value="{{size}}">{{size}}</option>
+                        </select>
+                        </br>
+                        <div ng-show="validate.size" class="red-font">חובה לבחור גודל</div>
+
+                        <hr class="hr">
+
+                    </div>
+                </div>
+
+
+                <!-- size area -->
+                <div class="checkbox-area">
+                    <div class="choose-p">
+                        <h4 class="Spoiler-Bold">בחר מיקום:</h4>
+                        <select class="form-control" name="selectPlace" id="selectPlace" ng-model="order.location">
+                            <option class="Spoiler-black-title font-s-14" value="">-בחר מיקום-</option>
+                            <option class="shlager-black font-s-14" ng-repeat="place in place" value="{{place}}">{{place}}</option>
+                        </select>
+                        </br>
+                        <div ng-show="validate.location" class="red-font">חובה לבחור מיקום רצוי</div>
+
+                        <hr class="hr">
+
+                    </div>
+                </div>
+
+                <div class="checkbox-area">
+                    <div class="choose-p">
+                        <h4 class="Spoiler-Bold">צירוף מודעה מוכנה/קבצים לפרסום:</h4>
+                        <h5 class="arial"> קבצים מסוג:
+                            <span class="arial">jpg, pdf, png. word </span> בלבד</h5>
+                        <h5 class="arial">
+                            <a href="./public/images/instructions.pdf">להוראות סגירת קובץ לחץ כאן</a>
+                        </h5>
+                        <input type="file" ng-file-model="order.files" accept="image/*" class="btn-lg shlager-black" multiple />
+                        <!-- <button class="btn" type="button" ng-click="upload()">Upload</button> -->
+                        </br>
+                        <div ng-show="validate.files" class="red-font moveUp15">סוג קובץ לא חוקי</div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+        <div class="user-det">
+            <hr class="hr">
+            <h2 class="Spoiler-Bold">פרטי המפרסם:</h2>
+            <form class="form-horizontal">
+                <div>
+                    <label for="" class="Spoiler-Regular font-s-18">נא למלא את פרטי המפרסם בכל השדות:</label>
+                    <br>
+                    <input type="text" class="form-control width-25 float-right" ng-model="order.fname" placeholder="שם פרטי" required>
+
+                    <input type="text" class="form-control width-25 float-right" ng-model="order.lname" placeholder="שם משפחה" required>
+
+                    <input type="number" class="form-control width-25 float-right" ng-model="order.phone" placeholder="טלפון" required>
+
+                    <input type="email" class="form-control width-25 float-right" ng-model="order.email" placeholder="אימייל" required>
+                    <br/>
+                    <div ng-show="validate.fname" class="red-font width-25 float-right">שדה חובה</div>
+                    <div ng-show="validate.lname" class="red-font width-25 float-right">שדה חובה</div>
+                    <div ng-show="validate.phone" class="red-font width-25 float-right">שדה חובה</div>
+                    <div ng-show="validate.email" class="red-font width-25 float-right">שדה חובה</div>
+
+
+                    <button type="submit" class="btn-lg btn btn-danger padd-top-10 float-left marg-top Spoiler-Bold white-font" ng-disabled="checked" ng-click="orderSummary(chek)">סיכום הזמנה</button>
+                    <br/>
+
+
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+</div>

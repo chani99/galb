@@ -1,0 +1,105 @@
+
+
+  .paper-flx-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+
+  }
+  .paper-flex-item{
+    width: 47%;
+    padding: 5%;
+    margin: 1%;
+    box-sizing: border-box;
+
+    }
+
+    @media screen and (max-width: 500px) {
+  .paper-flex-item{
+          width: 100%;
+      }
+    }
+
+    
+  * {
+    box-sizing: border-box;
+  }
+
+  .flex-grid { 
+    margin: 0 0 20px 0;
+  }
+  .col {
+    padding: 20px;
+    margin: 3%;
+    
+  }
+
+  .white{
+      background-color: white;
+  }
+
+  .padding-main{
+    padding: 2% 7% 7% 7%;
+}
+
+.grid-main{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+grid-gap: 30px 10px;
+margin: 2%;
+grid-template-areas:
+"header header header header header header"
+"details details magazine magazine magazine magazine"
+"foothead foothead foothead foothead foothead foothead"
+}
+
+.header{
+grid-area: header;
+background-color: #A4A4A4;
+height: auto;
+}
+
+.magazine{
+  grid-area: magazine;
+  height: auto;
+  
+}
+
+.magazine a img  {
+max-width: 80%;
+box-shadow: 5px 5px 5px grey;
+
+}
+
+.details{
+  grid-area: details;
+  border-left:  solid #A4A4A4;
+  padding-left: 10%;
+  height: auto;
+}
+
+
+.foothead{
+  grid-area: foothead;
+  background-color: #A4A4A4;
+  height: auto;
+  }
+
+.footer{
+  grid-area: footer;
+  height: auto;
+
+}
+
+
+
+.form-control{
+  display: inline-flex;
+  border-radius: 0;
+  margin: 0;
+  border: 0;
+  height: 45px;
+  
+  
+}
+

@@ -1,0 +1,115 @@
+@gb-red: #ec1f27;
+@gb-black: black;
+@gb-gray:#D1D2D4;
+@gb-darkGray: #404040;
+@gb-lightGray: rgb(196, 196, 196);
+
+
+// *{
+//     border: solid greenyellow 1px;
+// }
+.row{
+    margin: 0;
+    padding: 0
+}
+ 
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-content: center;
+    
+  }
+  
+  .flex-item {
+    width: 25%;
+  }
+
+  @media screen and (max-width: 500px) {
+    .flex-item {
+        width: 50%;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .flex-item {
+        width: 100%;
+    }
+  }
+  .float-right{
+    float: right;
+  }
+  .inline-block{
+      display: inline-block;
+  }
+   .inline{
+       display: inline;
+   }
+
+  .fullscreen {
+    width: 100%;
+    
+  }
+  
+  
+.col-md-12{
+    margin: 0;
+    padding: 0
+}
+
+body {  
+    max-width: 1400px;
+    background-color: @gb-black;
+    margin:0, auto;
+    padding:0;
+    box-sizing:border-box; 
+}
+
+
+.navbar-nav{
+    float: right;
+    margin-top: 32px;
+}
+
+.navbar{
+    margin-bottom:0 
+}
+
+#gb-logo {
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    
+  }
+
+footer {
+    padding-top: 15px;
+}
+
+#footer-logo {
+    position: relative;
+    top: -10px;
+}
+
+.padd-bottom{
+    padding-bottom: 20px;
+}
+
+.submitted .ng-invalid, .submitted .ng-pristine {
+    border: 1px solid red;
+}
+
+// .ng-scope{
+//     margin: 0;
+//     padding: 0;
+// }
+
+
+//   #test{
+//       background-color: rgb(189, 66, 66);
+//       height: 50px;
+//   }
+
